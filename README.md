@@ -18,3 +18,8 @@ $role->permissions()->sync($request->permissions);
 ```php
 $user->roles()->sync($request->roles);
 ```
+
+## Creamos la funcionalidad para sincronizar Permisos directos a Usuarios
+```php
+$user->permissions()->sync($request->permissions);
+```

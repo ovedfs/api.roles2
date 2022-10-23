@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\MeetingController;
 use App\Http\Controllers\Api\UserRolesController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\RolePermissionsController;
+use App\Http\Controllers\Api\UserPermissionsController;
 
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
@@ -30,4 +31,8 @@ Route::group(['middleware' => ["auth:sanctum"]], function(){
     // User --> Roles
     Route::get('user/{user}/roles', [UserRolesController::class, 'show']);
     Route::post('user/{user}/roles', [UserRolesController::class, 'sync']);
+
+    // User --> Permissions
+    Route::get('user/{user}/permissions', [UserPermissionsController::class, 'show']);
+    Route::post('user/{user}/permissions', [UserPermissionsController::class, 'sync']);
 });
