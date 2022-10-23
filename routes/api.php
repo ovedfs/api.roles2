@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\MeetingController;
 use App\Http\Controllers\Api\PermissionController;
 
@@ -16,4 +17,7 @@ Route::group(['middleware' => ["auth:sanctum"]], function(){
 
     // Permissions CRUD
     Route::apiResource('permissions', PermissionController::class);
+
+    // Roles CRUD
+    Route::apiResource('roles', RoleController::class);
 });
