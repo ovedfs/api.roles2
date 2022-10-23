@@ -8,3 +8,8 @@
 
 ## Creamos un CRUD para el manejo de Roles
 - **Roles**: user, editor, admin, superadmin
+
+## Creamos la funcionalidad para sincronizar Permisos a Roles
+```php
+$role->permissions()->sync($request->permissions);
+```
